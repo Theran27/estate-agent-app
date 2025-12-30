@@ -1,6 +1,8 @@
 import { useState } from "react";
 import SearchForm from "../components/search/SearchForm";
+import SearchResults from "../components/search/SearchResults";
 import properties from "../data/properties.json";
+import "../styles/search.css";
 
 const SearchPage = () => {
     const [results, setResults] = useState([]);
@@ -27,7 +29,9 @@ const SearchPage = () => {
 
             const matchesPostcode =
                 !filters.postcode ||
-                property.postcode.toLowerCase().startsWith(filters.postcode.toLowerCase());
+                property.postcode
+                    .toLowerCase()
+                    .startsWith(filters.postcode.toLowerCase());
 
             const matchesDate =
                 !filters.dateAdded ||
@@ -54,14 +58,7 @@ const SearchPage = () => {
 
             <SearchForm onSearch={handleSearch} />
 
-            <h3>Results: {results.length}</h3>
-            <ul>
-                {results.map((property) => (
-                    <li key={property.id}>
-                        {property.type} – £{property.price} – {property.bedrooms} bedrooms
-                    </li>
-                ))}
-            </ul>
+            <SearchResults results={results} />
         </div>
     );
 };
