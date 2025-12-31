@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { DragDropContext } from "@hello-pangea/dnd";
 import SearchForm from "../components/search/SearchForm";
 import SearchResults from "../components/search/SearchResults";
-import FavouritesList from "../components/favourites/FavouritesList.jsx";
+import FavouritesList from "../components/favourites/FavouritesList";
 import properties from "../data/properties.json";
 import useFavourites from "../hooks/useFavourites";
 import "../styles/search.css";
@@ -59,24 +60,40 @@ const SearchPage = () => {
         setResults(filtered);
     };
 
+    const handleDragEnd = (result) => {
+        if (!result.destination) return;
+
+        const draggedId = Number(result.draggableId);
+
+        const property = results.find(
+            (p) => p.id === draggedId
+        );
+
+        if (property) {
+            addFavourite(property);
+        }
+    };
+
     return (
-        <div>
-            <h1>People’s Real Estate Brokers</h1>
-            <p>Find your next home with confidence</p>
+        <DragDropContext onDragEnd={handleDragEnd}>
+            <div>
+                <h1>People’s Real Estate Brokers</h1>
+                <p>Find your next home with confidence</p>
 
-            <SearchForm onSearch={handleSearch} />
+                <SearchForm onSearch={handleSearch} />
 
-            <SearchResults
-                results={results}
-                onAddFavourite={addFavourite}
-            />
+                <SearchResults
+                    results={results}
+                    onAddFavourite={addFavourite}
+                />
 
-            <FavouritesList
-                favourites={favourites}
-                onRemove={removeFavourite}
-                onClear={clearFavourites}
-            />
-        </div>
+                <FavouritesList
+                    favourites={favourites}
+                    onRemove={removeFavourite}
+                    onClear={clearFavourites}
+                />
+            </div>
+        </DragDropContext>
     );
 };
 
