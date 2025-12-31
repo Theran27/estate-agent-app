@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { DragDropContext } from "@hello-pangea/dnd";
+
 import SearchForm from "../components/search/SearchForm";
 import SearchResults from "../components/search/SearchResults";
 import FavouritesList from "../components/favourites/FavouritesList";
+
 import properties from "../data/properties.json";
 import useFavourites from "../hooks/useFavourites";
+
+import "../styles/layout.css";
 import "../styles/search.css";
+import "../styles/favourites.css";
 
 const SearchPage = () => {
     const [results, setResults] = useState([]);
+
     const {
         favourites,
         addFavourite,
@@ -64,10 +70,7 @@ const SearchPage = () => {
         if (!result.destination) return;
 
         const draggedId = Number(result.draggableId);
-
-        const property = results.find(
-            (p) => p.id === draggedId
-        );
+        const property = results.find((p) => p.id === draggedId);
 
         if (property) {
             addFavourite(property);
@@ -76,22 +79,26 @@ const SearchPage = () => {
 
     return (
         <DragDropContext onDragEnd={handleDragEnd}>
-            <div>
-                <h1>People’s Real Estate Brokers</h1>
-                <p>Find your next home with confidence</p>
+            <div className="page-container">
+                <div className="header">
+                    <h1>People’s Real Estate Brokers</h1>
+                    <p>Find your next home with confidence</p>
+                </div>
 
                 <SearchForm onSearch={handleSearch} />
 
-                <SearchResults
-                    results={results}
-                    onAddFavourite={addFavourite}
-                />
+                <div className="main-layout">
+                    <SearchResults
+                        results={results}
+                        onAddFavourite={addFavourite}
+                    />
 
-                <FavouritesList
-                    favourites={favourites}
-                    onRemove={removeFavourite}
-                    onClear={clearFavourites}
-                />
+                    <FavouritesList
+                        favourites={favourites}
+                        onRemove={removeFavourite}
+                        onClear={clearFavourites}
+                    />
+                </div>
             </div>
         </DragDropContext>
     );
