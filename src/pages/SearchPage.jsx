@@ -1,11 +1,19 @@
 import { useState } from "react";
 import SearchForm from "../components/search/SearchForm";
 import SearchResults from "../components/search/SearchResults";
+import FavouritesList from "../components/favourites/FavouritesList.jsx";
 import properties from "../data/properties.json";
+import useFavourites from "../hooks/useFavourites";
 import "../styles/search.css";
 
 const SearchPage = () => {
     const [results, setResults] = useState([]);
+    const {
+        favourites,
+        addFavourite,
+        removeFavourite,
+        clearFavourites
+    } = useFavourites();
 
     const handleSearch = (filters) => {
         const filtered = properties.filter((property) => {
@@ -58,7 +66,16 @@ const SearchPage = () => {
 
             <SearchForm onSearch={handleSearch} />
 
-            <SearchResults results={results} />
+            <SearchResults
+                results={results}
+                onAddFavourite={addFavourite}
+            />
+
+            <FavouritesList
+                favourites={favourites}
+                onRemove={removeFavourite}
+                onClear={clearFavourites}
+            />
         </div>
     );
 };
