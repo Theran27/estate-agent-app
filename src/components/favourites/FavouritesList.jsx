@@ -1,8 +1,9 @@
-import { Droppable, Draggable } from "@hello-pangea/dnd";
+import { Droppable } from "@hello-pangea/dnd";
+import FavouriteItem from "./FavouriteItem";
 
 const FavouritesList = ({ favourites, onRemove, onClear }) => {
     return (
-        <div style={{ marginTop: "30px" }}>
+        <div className="favourites-panel">
             <h2>Favourites</h2>
 
             <Droppable droppableId="favourites">
@@ -10,46 +11,19 @@ const FavouritesList = ({ favourites, onRemove, onClear }) => {
                     <div
                         ref={provided.innerRef}
                         {...provided.droppableProps}
-                        style={{
-                            minHeight: "120px",
-                            padding: "10px",
-                            background: "#f1f1f1",
-                            borderRadius: "6px"
-                        }}
+                        style={{ minHeight: "120px" }}
                     >
                         {favourites.length === 0 && (
                             <p>Drag properties here to save them</p>
                         )}
 
                         {favourites.map((property, index) => (
-                            <Draggable
+                            <FavouriteItem
                                 key={property.id}
-                                draggableId={property.id.toString()}
+                                property={property}
                                 index={index}
-                            >
-                                {(provided) => (
-                                    <div
-                                        ref={provided.innerRef}
-                                        {...provided.draggableProps}
-                                        {...provided.dragHandleProps}
-                                        style={{
-                                            background: "#ffffff",
-                                            padding: "10px",
-                                            marginBottom: "10px",
-                                            borderRadius: "6px",
-                                            boxShadow: "0 1px 5px rgba(0,0,0,0.1)",
-                                            ...provided.draggableProps.style
-                                        }}
-                                    >
-                                        <strong>£{property.price.toLocaleString()}</strong>
-                                        <p>{property.shortDescription}</p>
-
-                                        <button onClick={() => onRemove(property.id)}>
-                                            ❌ Remove
-                                        </button>
-                                    </div>
-                                )}
-                            </Draggable>
+                                onRemove={onRemove}
+                            />
                         ))}
 
                         {provided.placeholder}
@@ -58,10 +32,7 @@ const FavouritesList = ({ favourites, onRemove, onClear }) => {
             </Droppable>
 
             {favourites.length > 0 && (
-                <button
-                    style={{ marginTop: "10px" }}
-                    onClick={onClear}
-                >
+                <button className="clear-btn" onClick={onClear}>
                     Clear All Favourites
                 </button>
             )}
