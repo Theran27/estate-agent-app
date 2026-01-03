@@ -1,0 +1,67 @@
+/* =========================
+   PAGE CONTAINER
+   ========================= */
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+}
+
+/* =========================
+   SEARCH FORM ALIGNMENT
+   ========================= */
+
+.search-form {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* =========================
+   RESULTS + FAVOURITES LAYOUT
+   ========================= */
+
+.results-layout {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+    align-items: start;
+}
+
+/* =========================
+   FAVOURITES PANEL
+   ========================= */
+
+.favourites-container {
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    /* Sticky sidebar effect */
+    position: sticky;
+    top: 100px;
+}
+
+/* Empty state spacing */
+.favourites-container p {
+    margin-top: 12px;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+    .results-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .favourites-container {
+        position: static;
+        margin-top: 32px;
+    }
+}

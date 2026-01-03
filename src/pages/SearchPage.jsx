@@ -28,20 +28,15 @@ const SearchPage = () => {
     // 🔍 Search filtering logic
     const handleSearch = (filters) => {
         const filteredResults = properties.filter((property) => {
-            // 1️⃣ Property type
             const matchesType =
                 filters.type === "Any" || property.type === filters.type;
 
-            // 2️⃣ Price range
             const matchesMinPrice =
-                !filters.minPrice ||
-                property.price >= Number(filters.minPrice);
+                !filters.minPrice || property.price >= Number(filters.minPrice);
 
             const matchesMaxPrice =
-                !filters.maxPrice ||
-                property.price <= Number(filters.maxPrice);
+                !filters.maxPrice || property.price <= Number(filters.maxPrice);
 
-            // 3️⃣ Bedroom range
             const matchesMinBedrooms =
                 !filters.minBedrooms ||
                 property.bedrooms >= Number(filters.minBedrooms);
@@ -50,7 +45,6 @@ const SearchPage = () => {
                 !filters.maxBedrooms ||
                 property.bedrooms <= Number(filters.maxBedrooms);
 
-            // 4️⃣ Date added
             const matchesDateAfter =
                 !filters.dateAddedAfter ||
                 new Date(property.dateAdded) >=
@@ -61,7 +55,6 @@ const SearchPage = () => {
                 new Date(property.dateAdded) <=
                 new Date(filters.dateAddedBefore);
 
-            // 5️⃣ Postcode prefix
             const matchesPostcode =
                 !filters.postcode ||
                 property.postcode
@@ -107,21 +100,23 @@ const SearchPage = () => {
                     {/* Search filters */}
                     <SearchForm onSearch={handleSearch} />
 
-                    {/* Results + favourites layout */}
-                    <div className="main-layout">
-                        {hasSearched && (
+                    {/* Show results + favourites ONLY after search */}
+                    {hasSearched && (
+                        <div className="results-layout">
+                            {/* LEFT: Search results */}
                             <SearchResults
                                 results={results}
                                 onAddFavourite={addFavourite}
                             />
-                        )}
 
-                        <FavouritesList
-                            favourites={favourites}
-                            onRemove={removeFavourite}
-                            onClear={clearFavourites}
-                        />
-                    </div>
+                            {/* RIGHT: Favourites sidebar */}
+                            <FavouritesList
+                                favourites={favourites}
+                                onRemove={removeFavourite}
+                                onClear={clearFavourites}
+                            />
+                        </div>
+                    )}
                 </div>
             </>
         </DragDropContext>
