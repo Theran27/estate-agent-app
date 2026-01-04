@@ -1,18 +1,135 @@
-.footer {
-    margin-top: 60px;
-    padding: 30px 20px;
-    background: #111827;
-    color: #e5e7eb;
+.site-footer {
+    background: #f9fafb;
+    padding-top: 60px;
+    font-size: 0.95rem;
+    color: #374151;
 }
 
-.footer-content {
+.footer-container {
     max-width: 1200px;
     margin: auto;
-    text-align: center;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
 }
 
-.footer-sub {
-    margin-top: 6px;
-    font-size: 0.9rem;
-    color: #9ca3af;
+/* Columns */
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.footer-col h4 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.footer-col ul li:hover {
+    text-decoration: underline;
+}
+
+/* Tagline */
+.footer-tagline {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* App buttons */
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.store-btn {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.store-btn:hover {
+    background: #f3f4f6;
+}
+
+/* Professional button */
+.pro-btn {
+    margin-top: 16px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background: #111827;
+    color: white;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pro-btn:hover {
+    opacity: 0.9;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e5e7eb;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-links span,
+.social-icons span {
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.footer-links span:hover,
+.social-icons span:hover {
+    text-decoration: underline;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
 }

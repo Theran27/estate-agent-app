@@ -77,7 +77,7 @@ const SearchPage = () => {
         setHasSearched(true);
     };
 
-    // ❤️ Drag & drop into favourites
+    //  Drag & drop into favourites
     const handleDragEnd = (result) => {
         if (!result.destination) return;
 

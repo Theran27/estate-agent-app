@@ -3,7 +3,7 @@ import FavouriteItem from "./FavouriteItem";
 
 const FavouritesList = ({ favourites, onRemove, onClear }) => {
     return (
-        <div className="favourites-panel">
+        <div className="favourites-container">
             <h2>Favourites</h2>
 
             <Droppable droppableId="favourites">
@@ -14,7 +14,7 @@ const FavouritesList = ({ favourites, onRemove, onClear }) => {
                         style={{ minHeight: "120px" }}
                     >
                         {favourites.length === 0 && (
-                            <p>Drag properties here to save them</p>
+                            <p className="favourites-hint">Drag properties here to save them</p>
                         )}
 
                         {favourites.map((property, index) => (

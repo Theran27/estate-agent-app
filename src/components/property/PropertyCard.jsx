@@ -1,39 +1,35 @@
 import { Link } from "react-router-dom";
 
-const PropertyCard = ({ property, onAddFavourite, dragHandleProps }) => {
+const PropertyCard = ({ property, onAddFavourite }) => {
     return (
         <div className="property-card">
-            {/* Drag handle area */}
-            <div
-                className="property-drag-handle"
-                {...dragHandleProps}
-                title="Drag to favourites"
-            >
-                ⠿
-            </div>
-
             <img
                 src={property.images[0]}
                 alt={property.shortDescription}
-                className="property-image"
             />
 
-            <div className="property-info">
-                <h3>£{property.price.toLocaleString()}</h3>
-                <p>{property.shortDescription}</p>
-                <p>{property.bedrooms} bedrooms</p>
+            <h3>{property.shortDescription}</h3>
+            <div className="price">£{property.price.toLocaleString()}</div>
+            <p>{property.bedrooms} bedrooms</p>
 
-                <button onClick={() => onAddFavourite(property)}>
-                    ❤️ Add to Favourites
+            <div className="actions">
+                <button
+                    className="favourite-btn"
+                    onClick={() => onAddFavourite(property)}
+                    aria-label="Add to favourites"
+                >
+                    <span className="heart">❤️</span>
+                    <span>Add to Favourites</span>
                 </button>
 
-                <br />
-
-                {/* NORMAL LINK — now clickable */}
-                <Link to={`/property/${property.id}`}>
-                    View Details
+                <Link
+                    to={`/property/${property.id}`}
+                    className="view-details"
+                >
+                    View Details →
                 </Link>
             </div>
+
         </div>
     );
 };

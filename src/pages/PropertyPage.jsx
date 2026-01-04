@@ -11,12 +11,15 @@ const PropertyPage = () => {
         property?.images[0]
     );
 
+    const [activeTab, setActiveTab] = useState("description");
+
     if (!property) {
         return <p style={{ padding: "40px" }}>Property not found.</p>;
     }
 
     return (
         <div className="property-page">
+            {/* HEADER */}
             <div className="property-header">
                 <h1>{property.shortDescription}</h1>
                 <p className="price">£{property.price.toLocaleString()}</p>
@@ -27,33 +30,71 @@ const PropertyPage = () => {
 
             {/* IMAGE GALLERY */}
             <div className="gallery">
-                {/* Thumbnails */}
                 <div className="thumbnails">
                     {property.images.slice(0, 5).map((img, index) => (
                         <img
                             key={index}
                             src={img}
                             alt={`Thumbnail ${index + 1}`}
-                            className={
-                                img === activeImage
-                                    ? "thumb active"
-                                    : "thumb"
-                            }
+                            className={`thumb ${
+                                img === activeImage ? "active" : ""
+                            }`}
                             onClick={() => setActiveImage(img)}
                         />
                     ))}
                 </div>
 
-                {/* Main image */}
                 <div className="main-image">
-                    <img src={activeImage} alt="Selected property view" />
+                    <img src={activeImage} alt="Property view" />
                 </div>
             </div>
 
-            {/* DESCRIPTION */}
-            <div className="property-description">
-                <h2>Description</h2>
-                <p>{property.longDescription}</p>
+            {/* TABS */}
+            <div className="tabs">
+                <button
+                    className={activeTab === "description" ? "tab active" : "tab"}
+                    onClick={() => setActiveTab("description")}
+                >
+                    Description
+                </button>
+
+                <button
+                    className={activeTab === "floorplan" ? "tab active" : "tab"}
+                    onClick={() => setActiveTab("floorplan")}
+                >
+                    Floor Plan
+                </button>
+
+                <button
+                    className={activeTab === "map" ? "tab active" : "tab"}
+                    onClick={() => setActiveTab("map")}
+                >
+                    Map
+                </button>
+            </div>
+
+            {/* TAB CONTENT */}
+            <div className="tab-content">
+                {activeTab === "description" && (
+                    <p>{property.longDescription}</p>
+                )}
+
+                {activeTab === "floorplan" && (
+                    <img
+                        src={property.floorPlan}
+                        alt="Floor plan"
+                        className="floorplan"
+                    />
+                )}
+
+                {activeTab === "map" && (
+                    <iframe
+                        title="Google Map"
+                        src={`https://www.google.com/maps?q=${property.location.lat},${property.location.lng}&z=15&output=embed`}
+                        className="map"
+                        loading="lazy"
+                    ></iframe>
+                )}
             </div>
 
             <Link to="/" className="back-link">

@@ -7,16 +7,16 @@
     "dateAdded": "2025-11-10",
     "postcode": "NW1",
     "shortDescription": "Modern 3-bedroom house in North London",
-    "longDescription": "A spacious and modern three-bedroom house located in a quiet residential area of North London. The property features a large living area, modern kitchen, private garden, and excellent transport links.",
+    "longDescription": "This spacious and modern three-bedroom house is situated in a quiet and desirable residential area of North London. The property offers a bright and welcoming living space, complemented by a contemporary fitted kitchen with ample storage and workspace. Upstairs, the bedrooms are generously sized and benefit from natural light throughout the day. The house also features a private rear garden, ideal for outdoor relaxation or entertaining guests. With excellent transport links, local schools, parks, and shopping amenities nearby, this property is perfectly suited for families or professionals seeking a comfortable and well-connected home.",
     "images": [
-      "/images/house1-1.jpg",
-      "/images/house1-2.jpg",
-      "/images/house1-3.jpg",
-      "/images/house1-4.jpg",
-      "/images/house1-5.jpg",
-      "/images/house1-6.jpg"
+      "/assets/properties/property1_1.jpg",
+      "/assets/properties/property1_2.jpg",
+      "/assets/properties/property1_3.jpg",
+      "/assets/properties/property1_4.jpg",
+      "/assets/properties/property1_5.jpg",
+      "/assets/properties/property1_6.jpg"
     ],
-    "floorPlan": "/images/floorplan1.jpg",
+    "floorPlan": "/assets/properties/floorplan1.png",
     "location": {
       "lat": 51.5416,
       "lng": -0.1432
@@ -30,16 +30,16 @@
     "dateAdded": "2025-10-25",
     "postcode": "E1",
     "shortDescription": "Stylish 2-bedroom flat near the City",
-    "longDescription": "This stylish two-bedroom flat offers open-plan living, a modern bathroom, and close proximity to shops, restaurants, and transport links in East London.",
+    "longDescription": "This stylish two-bedroom flat offers modern urban living in close proximity to the City of London. The property features an open-plan living and dining area designed to maximise space and natural light, creating a comfortable and contemporary atmosphere. The kitchen is fully equipped with modern appliances, while the bedrooms provide a calm and relaxing retreat. The bathroom is finished to a high standard with sleek fittings. Located near shops, restaurants, and excellent transport connections, this flat is ideal for professionals or investors looking for a well-located and low-maintenance property.",
     "images": [
-      "/images/flat1-1.jpg",
-      "/images/flat1-2.jpg",
-      "/images/flat1-3.jpg",
-      "/images/flat1-4.jpg",
-      "/images/flat1-5.jpg",
-      "/images/flat1-6.jpg"
+      "/assets/properties/property2_1.jpg",
+      "/assets/properties/property2_2.jpg",
+      "/assets/properties/property2_3.jpg",
+      "/assets/properties/property2_4.jpg",
+      "/assets/properties/property2_5.jpg",
+      "/assets/properties/property2_6.jpg"
     ],
-    "floorPlan": "/images/floorplan2.jpg",
+    "floorPlan": "/assets/properties/floorplan2.png",
     "location": {
       "lat": 51.5155,
       "lng": -0.0586
@@ -53,18 +53,18 @@
     "dateAdded": "2025-11-28",
     "postcode": "BR1",
     "shortDescription": "Detached 4-bedroom family home",
-    "longDescription": "A large detached four-bedroom family home with driveway parking, a spacious garden, and excellent schools nearby. Ideal for families looking for space and comfort.",
+    "longDescription": "This impressive detached four-bedroom family home offers generous living space both inside and out. The property benefits from a spacious layout that includes multiple reception areas, a well-appointed kitchen, and comfortable bedrooms suitable for family living. Outside, the house features a private driveway providing off-street parking, along with a large garden ideal for children, entertaining, or relaxation. The property is located close to highly regarded schools, green spaces, and local amenities, making it an excellent choice for families seeking space, privacy, and long-term comfort.",
     "images": [
-      "/images/house2-1.jpg",
-      "/images/house2-2.jpg",
-      "/images/house2-3.jpg",
-      "/images/house2-4.jpg",
-      "/images/house2-5.jpg",
-      "/images/house2-6.jpg"
+      "/assets/properties/property3_1.jpg",
+      "/assets/properties/property3_2.jpg",
+      "/assets/properties/property3_3.jpg",
+      "/assets/properties/property3_4.jpg",
+      "/assets/properties/property3_5.jpg",
+      "/assets/properties/property3_6.jpg"
     ],
-    "floorPlan": "/images/floorplan3.jpg",
+    "floorPlan": "/assets/properties/floorplan3.png",
     "location": {
-      "lat": 51.4060,
+      "lat": 51.406,
       "lng": 0.0153
     }
   },
@@ -76,16 +76,16 @@
     "dateAdded": "2025-09-15",
     "postcode": "SE1",
     "shortDescription": "Compact 1-bedroom apartment in central London",
-    "longDescription": "A well-presented one-bedroom apartment perfect for first-time buyers or investors. Located in the heart of London with excellent access to public transport.",
+    "longDescription": "This well-presented one-bedroom apartment is located in the heart of central London, making it an ideal choice for first-time buyers, professionals, or investors. The property features a thoughtfully designed layout that maximises space and comfort, including a bright living area, a functional kitchen, and a cosy bedroom. The apartment benefits from excellent access to public transport, local shops, restaurants, and cultural attractions. Its central location and efficient use of space make it a highly desirable and practical urban home.",
     "images": [
-      "/images/flat2-1.jpg",
-      "/images/flat2-2.jpg",
-      "/images/flat2-3.jpg",
-      "/images/flat2-4.jpg",
-      "/images/flat2-5.jpg",
-      "/images/flat2-6.jpg"
+      "/assets/properties/property4_1.jpg",
+      "/assets/properties/property4_2.jpg",
+      "/assets/properties/property4_3.jpg",
+      "/assets/properties/property4_4.jpg",
+      "/assets/properties/property4_5.jpg",
+      "/assets/properties/property4_6.jpg"
     ],
-    "floorPlan": "/images/floorplan4.jpg",
+    "floorPlan": "/assets/properties/floorplan4.png",
     "location": {
       "lat": 51.5045,
       "lng": -0.0865
@@ -99,16 +99,16 @@
     "dateAdded": "2025-12-01",
     "postcode": "SW15",
     "shortDescription": "Charming 3-bedroom house with garden",
-    "longDescription": "A charming three-bedroom house located in a popular South West London neighbourhood. Features include a private garden, spacious kitchen, and excellent local amenities.",
+    "longDescription": "This charming three-bedroom house is situated in a popular South West London neighbourhood known for its friendly community and local amenities. The property offers a warm and welcoming interior, featuring a spacious kitchen, comfortable living areas, and well-proportioned bedrooms. A private rear garden provides an excellent outdoor space for relaxing, gardening, or hosting family gatherings. With nearby schools, parks, shops, and transport links, this home is ideal for families or buyers seeking a balance between city living and suburban comfort.",
     "images": [
-      "/images/house3-1.jpg",
-      "/images/house3-2.jpg",
-      "/images/house3-3.jpg",
-      "/images/house3-4.jpg",
-      "/images/house3-5.jpg",
-      "/images/house3-6.jpg"
+      "/assets/properties/property5_1.jpg",
+      "/assets/properties/property5_2.jpg",
+      "/assets/properties/property5_3.jpg",
+      "/assets/properties/property5_4.jpg",
+      "/assets/properties/property5_5.jpg",
+      "/assets/properties/property5_6.jpg"
     ],
-    "floorPlan": "/images/floorplan5.jpg",
+    "floorPlan": "/assets/properties/floorplan5.png",
     "location": {
       "lat": 51.4571,
       "lng": -0.2216
@@ -122,16 +122,16 @@
     "dateAdded": "2025-11-05",
     "postcode": "N1",
     "shortDescription": "Modern 2-bedroom flat with balcony",
-    "longDescription": "A bright and modern two-bedroom flat featuring a private balcony, open-plan living space, and easy access to public transport and local shops.",
+    "longDescription": "This bright and modern two-bedroom flat offers comfortable and stylish living in a well-connected location. The property features an open-plan living and dining area that opens onto a private balcony, providing additional outdoor space and natural light. The bedrooms are well-sized, and the modern kitchen and bathroom are finished to a high standard. Situated close to public transport, shops, cafés, and local amenities, this flat is ideal for professionals, couples, or investors seeking a contemporary home in a vibrant area.",
     "images": [
-      "/images/flat3-1.jpg",
-      "/images/flat3-2.jpg",
-      "/images/flat3-3.jpg",
-      "/images/flat3-4.jpg",
-      "/images/flat3-5.jpg",
-      "/images/flat3-6.jpg"
+      "/assets/properties/property6_1.jpg",
+      "/assets/properties/property6_2.jpg",
+      "/assets/properties/property6_3.jpg",
+      "/assets/properties/property6_4.jpg",
+      "/assets/properties/property6_5.jpg",
+      "/assets/properties/property6_6.jpg"
     ],
-    "floorPlan": "/images/floorplan6.jpg",
+    "floorPlan": "/assets/properties/floorplan6.png",
     "location": {
       "lat": 51.5413,
       "lng": -0.1037
@@ -145,16 +145,16 @@
     "dateAdded": "2025-08-20",
     "postcode": "HA5",
     "shortDescription": "Spacious 5-bedroom luxury family home",
-    "longDescription": "An impressive five-bedroom luxury family home offering generous living space, high-quality finishes, a large garden, and excellent transport connections.",
+    "longDescription": "This impressive five-bedroom luxury family home offers exceptional living space and high-quality finishes throughout. Designed with comfort and style in mind, the property includes multiple living areas, generously sized bedrooms, and modern fittings that enhance everyday living. A large private garden provides ample outdoor space for relaxation and entertaining, while excellent transport connections ensure convenient access to surrounding areas. This property is perfectly suited for larger families or buyers seeking a premium home with space, quality, and long-term appeal.",
     "images": [
-      "/images/house4-1.jpg",
-      "/images/house4-2.jpg",
-      "/images/house4-3.jpg",
-      "/images/house4-4.jpg",
-      "/images/house4-5.jpg",
-      "/images/house4-6.jpg"
+      "/assets/properties/property7_1.jpg",
+      "/assets/properties/property7_2.jpg",
+      "/assets/properties/property7_3.jpg",
+      "/assets/properties/property7_4.jpg",
+      "/assets/properties/property7_5.jpg",
+      "/assets/properties/property7_6.jpg"
     ],
-    "floorPlan": "/images/floorplan7.jpg",
+    "floorPlan": "/assets/properties/floorplan7.png",
     "location": {
       "lat": 51.6025,
       "lng": -0.3737
