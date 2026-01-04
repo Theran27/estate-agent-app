@@ -1,107 +1,66 @@
+import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { DragDropContext } from "@hello-pangea/dnd";
-
-import SearchForm from "../components/search/SearchForm";
-import SearchResults from "../components/search/SearchResults";
-import FavouritesList from "../components/favourites/FavouritesList";
-
 import properties from "../data/properties.json";
-import useFavourites from "../hooks/useFavourites";
+import "../styles/property.css";
 
-import "../styles/layout.css";
-import "../styles/search.css";
-import "../styles/favourites.css";
+const PropertyPage = () => {
+    const { id } = useParams();
+    const property = properties.find(p => p.id === Number(id));
 
-const SearchPage = () => {
-    const [results, setResults] = useState([]);
+    const [activeImage, setActiveImage] = useState(
+        property?.images[0]
+    );
 
-    const {
-        favourites,
-        addFavourite,
-        removeFavourite,
-        clearFavourites
-    } = useFavourites();
-
-    const handleSearch = (filters) => {
-        const filtered = properties.filter((property) => {
-            const matchesType =
-                filters.type === "Any" ||
-                filters.type.toLowerCase() === property.type;
-
-            const matchesMinPrice =
-                !filters.minPrice || property.price >= Number(filters.minPrice);
-
-            const matchesMaxPrice =
-                !filters.maxPrice || property.price <= Number(filters.maxPrice);
-
-            const matchesMinBedrooms =
-                !filters.minBedrooms ||
-                property.bedrooms >= Number(filters.minBedrooms);
-
-            const matchesMaxBedrooms =
-                !filters.maxBedrooms ||
-                property.bedrooms <= Number(filters.maxBedrooms);
-
-            const matchesPostcode =
-                !filters.postcode ||
-                property.postcode
-                    .toLowerCase()
-                    .startsWith(filters.postcode.toLowerCase());
-
-            const matchesDate =
-                !filters.dateAdded ||
-                new Date(property.dateAdded) >= new Date(filters.dateAdded);
-
-            return (
-                matchesType &&
-                matchesMinPrice &&
-                matchesMaxPrice &&
-                matchesMinBedrooms &&
-                matchesMaxBedrooms &&
-                matchesPostcode &&
-                matchesDate
-            );
-        });
-
-        setResults(filtered);
-    };
-
-    const handleDragEnd = (result) => {
-        if (!result.destination) return;
-
-        const draggedId = Number(result.draggableId);
-        const property = results.find((p) => p.id === draggedId);
-
-        if (property) {
-            addFavourite(property);
-        }
-    };
+    if (!property) {
+        return <p style={{ padding: "40px" }}>Property not found.</p>;
+    }
 
     return (
-        <DragDropContext onDragEnd={handleDragEnd}>
-            <div className="page-container">
-                <div className="header">
-                    <h1>People’s Real Estate Brokers</h1>
-                    <p>Find your next home with confidence</p>
+        <div className="property-page">
+            <div className="property-header">
+                <h1>{property.shortDescription}</h1>
+                <p className="price">£{property.price.toLocaleString()}</p>
+                <p className="meta">
+                    {property.bedrooms} bedrooms • {property.postcode}
+                </p>
+            </div>
+
+            {/* IMAGE GALLERY */}
+            <div className="gallery">
+                {/* Thumbnails */}
+                <div className="thumbnails">
+                    {property.images.slice(0, 5).map((img, index) => (
+                        <img
+                            key={index}
+                            src={img}
+                            alt={`Thumbnail ${index + 1}`}
+                            className={
+                                img === activeImage
+                                    ? "thumb active"
+                                    : "thumb"
+                            }
+                            onClick={() => setActiveImage(img)}
+                        />
+                    ))}
                 </div>
 
-                <SearchForm onSearch={handleSearch} />
-
-                <div className="main-layout">
-                    <SearchResults
-                        results={results}
-                        onAddFavourite={addFavourite}
-                    />
-
-                    <FavouritesList
-                        favourites={favourites}
-                        onRemove={removeFavourite}
-                        onClear={clearFavourites}
-                    />
+                {/* Main image */}
+                <div className="main-image">
+                    <img src={activeImage} alt="Selected property view" />
                 </div>
             </div>
-        </DragDropContext>
+
+            {/* DESCRIPTION */}
+            <div className="property-description">
+                <h2>Description</h2>
+                <p>{property.longDescription}</p>
+            </div>
+
+            <Link to="/" className="back-link">
+                ← Back to search results
+            </Link>
+        </div>
     );
 };
 
-export default SearchPage;
+export default PropertyPage;
