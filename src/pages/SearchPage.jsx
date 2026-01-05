@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DragDropContext } from "@hello-pangea/dnd";
 
-import HeroBanner from "../components/layout/HeroBanner";
+import HeroBanner from "../components/layout/Herobanner.jsx";
 import SearchForm from "../components/search/SearchForm";
 import SearchResults from "../components/search/SearchResults";
 import FavouritesList from "../components/favourites/FavouritesList";
