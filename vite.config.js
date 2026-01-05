@@ -5,10 +5,16 @@ export default defineConfig({
   plugins: [react()],
   // eslint-disable-next-line no-undef
   // base:process.env.VITE_BASE_PATH || "/estate-agent-app-deploy",
-  base:"/estate-agent-app-deploy",
+  base:"/",
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: "./src/tests/setupTests.js"
-  }
+    setupFiles: "./src/tests/setupTests.js",
+
+
+  },
+  rewrites: [{
+    source: "./(.*)",
+    destination: "./index.html",
+  }]
 });
